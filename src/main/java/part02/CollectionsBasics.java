@@ -133,7 +133,12 @@ public class CollectionsBasics {
      */
     public List<Integer> indicesOf(String text, String substring) {
         // You can assume that the given substring is not empty.
-
-        return null; // TODO: implement this method
+        List<Integer> indexes = new ArrayList<>();
+        int index = text.indexOf(substring);
+        while (index != -1) {
+            indexes.add(index);
+            index = text.indexOf(substring, index + 1);
+        }
+        return indexes; // TODO: implement this method
     }
 }
