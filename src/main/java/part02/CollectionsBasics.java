@@ -1,5 +1,6 @@
 package part02;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,7 +21,13 @@ public class CollectionsBasics {
      * @return The maximum value in the list.
      */
     public int maximum(List<Integer> numbers) {
-        return 0; // TODO: implement this method
+        int max = 0;
+        for (Integer single : numbers) {
+            if (single > max) {
+                max = single;
+            }
+        }
+        return max;// TODO: implement this method
     }
 
     /**
@@ -30,7 +37,11 @@ public class CollectionsBasics {
      * @return The sum of all integers in the list.
      */
     public int sum(List<Integer> numbers) {
-        return 0; // TODO: implement this method
+        int sum = 0;
+        for (Integer single : numbers) {
+            sum += single;
+        }
+        return sum; // TODO: implement this method
     }
 
     /**
@@ -47,7 +58,13 @@ public class CollectionsBasics {
      * @return A new list, where the numbers are multiplied by the given factor.
      */
     public List<Integer> multiply(List<Integer> numbers, int factor) {
-        return null; // TODO: implement this method
+        List<Integer> factored = new ArrayList<>();
+
+            for (int i = 0; i < numbers.size(); i++) {
+                factored.add(numbers.get(i) * factor);
+            }
+            return factored;
+       // TODO: implement this method
     }
 
     /**
@@ -61,7 +78,13 @@ public class CollectionsBasics {
      * @return A list containing the numbers between the start and end values.
      */
     public List<Integer> range(int start, int end) {
-        return null; // TODO: implement this method
+        List<Integer> numbers = new ArrayList<>();
+
+            for (int i = start; i < end; i++) {
+                numbers.add(i);
+            }
+            return numbers;
+       // TODO: implement this method
     }
 
     /**
@@ -73,7 +96,8 @@ public class CollectionsBasics {
      * @return The concatenated string.
      */
     public String concatenateStrings(List<String> strings) {
-        return ""; // TODO: implement this method
+        String string = String.join("", strings);
+        return string; // TODO: implement this method
     }
 
     /**
@@ -85,7 +109,12 @@ public class CollectionsBasics {
      * @return A list containing the lengths of the strings in the input list.
      */
     public List<Integer> getLengths(List<String> strings) {
-        return null; // TODO: implement this method
+        int length = 0;
+        List<Integer> lengths = new ArrayList<>();
+        for (String single : strings) {
+            lengths.add(single.length());
+        }
+        return lengths; // TODO: implement this method
     }
 
     /**
