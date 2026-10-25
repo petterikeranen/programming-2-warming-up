@@ -26,7 +26,7 @@ public class StringBasics {
         // TODO: Fix this method
 
         if (text.length() > maxLength) {
-            text.substring(0, maxLength);
+           return text.substring(0, maxLength);
         }
         return text;
     }
@@ -41,7 +41,7 @@ public class StringBasics {
     public boolean parseYesOrNo(String text) {
         // FIXME: this seems to always return false, even when the `text` is "yes"
 
-        if (text.toLowerCase() == "yes") {
+        if (text.equalsIgnoreCase("yes")) {
             return true;
         }
         return false;
@@ -61,7 +61,12 @@ public class StringBasics {
      * @return "fizz", "buzz", "fizzbuzz" or the given number as a string.
      */
     public String getFizzBuzz(int number) {
-        return "fizzbuzz"; // TODO: implement this method
+        String string = "";
+        if (number % 3 == 0) {
+            string += "fizz"; }
+        if (number % 5 == 0) { string += "buzz"; }
+        if (string.isEmpty()) { string += number; }
+        return string; // TODO: implement this method
     }
 
     /**
@@ -80,7 +85,13 @@ public class StringBasics {
      * @return The text centered in a string of the given width: " Java ".
      */
     public String center(String text, int width) {
-        return null; // TODO: implement this method
+        if (text.length() >= width) {
+            return text;
+        }
+        int all = width - text.length();
+        int left = all / 2;
+        int right = all - left;
+        return " ".repeat(left) + text + " ".repeat(right); // TODO: implement this method
     }
 
     /**
